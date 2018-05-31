@@ -8,7 +8,6 @@
 
 import CoreData         // For saving and loading data
 
-
 //
 // A class to save and load data from the "disk".
 // (See also the data model in file "CarPlayer.xcdatamodeld".)
@@ -20,7 +19,7 @@ class Savior {
     //
     func saveSpeedDisplayMode(valueOfDisplayMode: Int) {
 
-        saveInt("SpeedDisplayMode", valueToSave: valueOfDisplayMode)
+        saveInt(entityName: "SpeedDisplayMode", valueToSave: valueOfDisplayMode)
     }
 
 
@@ -29,7 +28,7 @@ class Savior {
     //
     func saveMapType(mapType: SpeedViewController.MapType) {
 
-        saveInt("MapType", valueToSave: mapType.rawValue)
+        saveInt(entityName: "MapType", valueToSave: mapType.rawValue)
     }
     
     
@@ -39,14 +38,14 @@ class Savior {
     func saveInt(entityName: String, valueToSave: Int) {
 
         // Get the managed object context of the app:
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext!
 
         // Get the relevant entity for the speed display mode (see file "CarPlayer.xcdatamodeld" for the data model):
-        let entity =  NSEntityDescription.entityForName(entityName, inManagedObjectContext: managedContext)
+        let entity =  NSEntityDescription.entity(forEntityName: entityName, in: managedContext)
 
         // Prepare the object tot be saved:
-        let displayMode = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        let displayMode = NSManagedObject(entity: entity!, insertInto: managedContext)
 
         // Store the object in the RAM:
         displayMode.setValue(valueToSave, forKey: "value")
@@ -88,7 +87,7 @@ class Savior {
     func loadInt(entityName: String, valueToLoad: inout Int) {
 
         // Get the managed object context of the app:
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext!
 
         // Create a fetch request:
@@ -98,7 +97,7 @@ class Savior {
    //     let error: NSError?
         var fetchedResults: [AnyObject]!
         do {
-            try fetchedResults = managedContext.executeFetchRequest(fetchRequest) as [AnyObject]?
+            try fetchedResults = managedContext.fetch(fetchRequest) as [AnyObject]?
         } catch {
 
             print("Savior.loadInt(): Could not load Int")
@@ -112,7 +111,8 @@ class Savior {
             if numOfResults > 0 {
 
                 // Get the latest value:
-                let val: Int = results[numOfResults-1].value("value") as! Int
+                let val:Int=results[numOfResults-1].value(forKey: "value") as! Int
+                //let val: Int = results[numOfResults-1].value("value") as! Int
                 // DEBUG print("Savior.loadInt(): Loaded value \"\(val)\".")
 
                 valueToLoad = val

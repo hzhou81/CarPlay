@@ -170,7 +170,7 @@ class MVC_Controller {
         _speedDisplayMode = 0
 
         // Load the speed display mode from disk:
-        _savior.loadSpeedDisplayMode(&_speedDisplayMode)
+        _savior.loadSpeedDisplayMode(valueOfDisplayMode: &_speedDisplayMode)
 
         // Check if the MPMusicplayer is already playing:
         checkIfMusicIsPlaying()
@@ -178,7 +178,7 @@ class MVC_Controller {
         // Fill the album dictionary according to what can be found in the music library.
         // Do this asynchronously:
         let qualityOfServiceClass: Int = Int(QOS_CLASS_BACKGROUND.rawValue)
-        let backgroundQueue = dispatch_get_global_queue(qualityOfServiceClass, 0)
+        let backgroundQueue = DispatchQueue.global(qualityOfServiceClass, 0)
         dispatch_async(backgroundQueue, {
             self.fillAlbumDictionary()
         })
@@ -191,7 +191,7 @@ class MVC_Controller {
     //
     func checkIfMusicIsPlaying() {
 
-        if _musicPlayer.playbackState == MPMusicPlaybackState.Playing {
+        if _musicPlayer.playbackState == MPMusicPlaybackState.playing {
 
             // We assume that the player is already playing.
             _musicPlayerIsPlaying = true
@@ -249,7 +249,7 @@ class MVC_Controller {
         // DEBUG print("MVC_Controller.fillAlbumDictionary(): Starting")
 
         // Create initial query:
-        let songsQuery = MPMediaQuery.songsQuery()
+        let songsQuery = MPMediaQuery.songs()
 
         // Filter out those items that are not music:
         let predicateJustMusic = MPMediaPropertyPredicate(value: MPMediaTypeMusic, forProperty: MPMediaItemPropertyMediaType)
@@ -271,7 +271,7 @@ class MVC_Controller {
             // "song" has type MPMediaItem
 
             // Skip stuff that is not music:
-            if !trackCanBePlayed(song) {
+            if !trackCanBePlayed(track: song) {
 
                 // Handle the number of tracks visited so far:
                 continue
@@ -279,8 +279,8 @@ class MVC_Controller {
 
             // This is a song that can be regarded "normal" and can be added to the song dictionary
 
-            let artistName: String = artistNameOfTrack(song)
-
+            let artistName: String = artistNameOfTrack(track: song)
+            
             // --- Store album IDs for the given artist ---
             // Fill the album dictionary with a new album name if this has not been stored before:
             if _albumIDDict[artistName] == nil {
@@ -290,15 +290,15 @@ class MVC_Controller {
                 _albumIDDict[artistName] = [ NSNumber ]()
                 _artworkForArtist[artistName] = song.artwork
 
-                let shortArtistName = shortNameForLongName(artistName)
+                let shortArtistName = shortNameForLongName(longName: artistName)
                 _longArtistName[shortArtistName] = artistName
             }
 
             // Get the album ID for the currently checked track:
-            let albumID: NSNumber = song.valueForProperty(MPMediaItemPropertyAlbumPersistentID) as! NSNumber
+            let albumID: NSNumber = song.value(forProperty: MPMediaItemPropertyAlbumPersistentID) as! NSNumber
 
             // Check if the album is unkown so far for the current artist:
-            if ((_albumIDDict[artistName]!).indexOf(albumID) == nil) {
+            if ((_albumIDDict[artistName]!).index(of: albumID) == nil) {
 
                 // Store the album name for this album ID if this has not been done before:
                 if _albumNameForID[albumID] == nil {
@@ -307,7 +307,7 @@ class MVC_Controller {
                 }
 
                 // This album ID was unknown so far. => Add it to the list of album IDs:
-                addAlbumIDAtRightPlace(&_albumIDDict[artistName]!, albumTitle: song.albumTitle!, albumIDToBeAdded: albumID)
+                addAlbumIDAtRightPlace(idArray: &_albumIDDict[artistName]!, albumTitle: song.albumTitle!, albumIDToBeAdded: albumID)
             }
 
             // --- Increase number of tracks for this artist ---
@@ -319,7 +319,7 @@ class MVC_Controller {
             
 
             // --- Store album IDs for the given genre ---
-            let genreNameOfThisTrack: String! = song.valueForProperty(MPMediaItemPropertyGenre) as! String!
+            let genreNameOfThisTrack: String! = song.value(forProperty: MPMediaItemPropertyGenre) as! String!
             if genreNameOfThisTrack != nil {
 
                 let genreTitle: String = _genreTitlePrefix + genreNameOfThisTrack
@@ -338,11 +338,11 @@ class MVC_Controller {
                 }
 
                 // Check if the album is new to the genre:
-                if ((_albumIDDict[genreTitle]!).indexOf(albumID) == nil) {
+                if ((_albumIDDict[genreTitle]!).index(of: albumID) == nil) {
 
                     // This album ID was unknown so far. => Add it to the list of album IDs:
                     //print("Adding albumID \"\(albumID)\" with title: \"\(song.albumTitle!)\" to the ID list of \"\(genreTitle)\".")
-                    addAlbumIDAtRightPlace(&_albumIDDict[genreTitle]!, albumTitle: song.albumTitle!, albumIDToBeAdded: albumID)
+                    addAlbumIDAtRightPlace(idArray: &_albumIDDict[genreTitle]!, albumTitle: song.albumTitle!, albumIDToBeAdded: albumID)
 
                     if (genreTitle == "Genre:Indie-Pop") {
                       // DEBUG print("albumIDDict is \"\(_albumIDDict[genreTitle]![0])\".")
@@ -377,7 +377,7 @@ class MVC_Controller {
         // DEBUG print("after play lists: \(_initialLoadState)")
 
         // Create the sorted list of artist short names:
-        _sortedArtistShortNames = Array(_longArtistName.keys).sort(<)
+        _sortedArtistShortNames = Array(_longArtistName.keys).sorted(by: <)
 
         // Finalize the load state:
         _initialLoadState = 1.0
@@ -394,7 +394,7 @@ class MVC_Controller {
     func trackCanBePlayed(track: MPMediaItem) -> Bool {
 
         // Set flag whether the track is actually a song:
-        let trackIsMusic: Bool = (track.valueForProperty(MPMediaItemPropertyMediaType) as! UInt == MPMediaTypeMusic)
+        let trackIsMusic: Bool = (track.value(forProperty: MPMediaItemPropertyMediaType) as! UInt == MPMediaTypeMusic)
         if !trackIsMusic {
 
             // We skip this track
@@ -403,7 +403,7 @@ class MVC_Controller {
         }
 
         // Set flag whether the track is only a dream in the clouds:
-        let trackHangsInTheClouds = track.valueForProperty(MPMediaItemPropertyIsCloudItem) as! Bool
+        let trackHangsInTheClouds = track.value(forProperty: MPMediaItemPropertyIsCloudItem) as! Bool
         if trackHangsInTheClouds {
 
             // We skip this track
@@ -412,7 +412,7 @@ class MVC_Controller {
         }
 
         // Set the artist name to be either the album artist or "Compilations" if the track is part of a compilation
-        let artistName: String! = artistNameOfTrack(track)
+        let artistName: String! = artistNameOfTrack(track: track)
 
         // track titles should never be empty but we check nevertheless:
         let trackTitlesAreEmpty = ((artistName == nil) || (track.albumTitle == nil) || (track.albumTitle == ""))
@@ -485,7 +485,7 @@ class MVC_Controller {
     func artistNameOfTrack(track: MPMediaItem) -> String {
 
         // Set flag whether the track is part of a compilation:
-        let trackIsInCompilation = track.valueForProperty(MPMediaItemPropertyIsCompilation) as! Bool
+        let trackIsInCompilation = track.value(forProperty: MPMediaItemPropertyIsCompilation) as! Bool
 
         // Set the artist name to be either the album artist or "Compilations" if the track is part of a compilation
         let artistName: String! = (trackIsInCompilation ? _compilationTitle : track.albumArtist)
@@ -528,7 +528,7 @@ class MVC_Controller {
             }
 
             let albumID: NSNumber = _albumIDDict[artistName]![0]
-            addAlbumIDAtRightPlace(&_albumIDDict[_oners]!, albumTitle: _albumNameForID[albumID]!, albumIDToBeAdded: albumID)
+            addAlbumIDAtRightPlace(idArray: &_albumIDDict[_oners]!, albumTitle: _albumNameForID[albumID]!, albumIDToBeAdded: albumID)
 
             // Increase number of tracks for this special "oners" artist:
             _numOfTracksForArtist[_oners]! += 1
@@ -540,12 +540,12 @@ class MVC_Controller {
         // Remove the transferred artists from the main list:
         for artistName in transferredArtists {
 
-            _albumIDDict.removeValueForKey(artistName)
-            _artworkForArtist.removeValueForKey(artistName)
-            _numOfTracksForArtist.removeValueForKey(artistName)
+            _albumIDDict.removeValue(forKey: artistName)
+            _artworkForArtist.removeValue(forKey: artistName)
+            _numOfTracksForArtist.removeValue(forKey: artistName)
 
-            let shortArtistName = shortNameForLongName(artistName)
-            _longArtistName.removeValueForKey(shortArtistName)
+            let shortArtistName = shortNameForLongName(longName: artistName)
+            _longArtistName.removeValue(forKey: shortArtistName)
         }
     }
 
@@ -561,7 +561,7 @@ class MVC_Controller {
         _longArtistName[_playlistsTitle] = _playlistsTitle
         _numOfTracksForArtist[_playlistsTitle] = 0
 
-        let playlistQuery = MPMediaQuery.playlistsQuery()
+        let playlistQuery = MPMediaQuery.playlists()
       //  let collNum = playlistQuery.collections!.count
         // DEBUG print("number of collections: \(collNum)")
 
@@ -578,34 +578,34 @@ class MVC_Controller {
             playlistCounter += 1
             // DEBUG print("playlistCounter: \(playlistCounter), _initialLoadState: \(_initialLoadState)")
 
-            let playlistName: String! = playlist.valueForProperty(MPMediaPlaylistPropertyName) as! String!
+            let playlistName: String! = playlist.value(forProperty: MPMediaPlaylistPropertyName) as! String!
 
-            if _playlistBlacklist.indexOf(playlistName) != nil {
+            if _playlistBlacklist.index(of: playlistName) != nil {
 
                 // This playlist name is on the blacklist. => Do not take it into account.
                 continue
             }
 
-            let playlistID = playlist.valueForProperty(MPMediaPlaylistPropertyPersistentID) as! NSNumber
+            let playlistID = playlist.value(forProperty: MPMediaPlaylistPropertyPersistentID) as! NSNumber
 
             // DEBUG print("\(playlistID): \(playlistName)")
 
             // Add the playlist ID to the list of playlist IDs:
-            addAlbumIDAtRightPlace(&_albumIDDict[_playlistsTitle]!, albumTitle: playlistName, albumIDToBeAdded: playlistID)
+            addAlbumIDAtRightPlace(idArray: &_albumIDDict[_playlistsTitle]!, albumTitle: playlistName, albumIDToBeAdded: playlistID)
 
             // Store the album name for this playlist ID:
             _albumNameForID[playlistID] = playlistName
 
             // Find out about the real number of tracks in the playlist. Unfortunately, this is simple counting...
             _numOfTracksForAlbumID[playlistID] = 0
-            let query = MPMediaQuery.songsQuery()
+            let query = MPMediaQuery.songs()
             let predicateJustThisPlaylist = MPMediaPropertyPredicate(value: playlistID, forProperty: MPMediaPlaylistPropertyPersistentID)
             query.addFilterPredicate(predicateJustThisPlaylist)
             assert(query.items != nil, "MVC_Controller.addPlaylistsAsArtist(): Got kaputt query result.")
             assert(query.items!.count > 0, "MVC_Controller.addPlaylistsAsArtist(): Got empty query result.")
             for queryItem in query.items! {
 
-                if trackCanBePlayed(queryItem) {
+                if trackCanBePlayed(track: queryItem) {
 
                     _numOfTracksForAlbumID[playlistID]! += 1
                 }

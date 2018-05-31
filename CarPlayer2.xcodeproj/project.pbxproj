@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1EC3CE5120C0719E0088DD7F /* Savior.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0941C6C1A9679890004411F /* Savior.swift */; };
+		1EC3CE5220C0735D0088DD7F /* Savior.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0941C6C1A9679890004411F /* Savior.swift */; };
+		1EC3CE5320C073750088DD7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D045D8971A1FDC4000944BF1 /* AppDelegate.swift */; };
 		863D1A4DF980757A9253C007 /* libPods-CarPlayer2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F74C5B5E2A4A7E3CE4A64876 /* libPods-CarPlayer2.a */; };
 		D01552FA1A4613AA0047DCC0 /* UIGestureWithFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01552F91A4613AA0047DCC0 /* UIGestureWithFeatures.swift */; };
 		D01552FC1A4877390047DCC0 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01552FB1A4877390047DCC0 /* ModalViewController.swift */; };
@@ -27,7 +30,6 @@
 		D078ECE31A27D71E00F300C3 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D078ECE21A27D71E00F300C3 /* AlbumViewController.swift */; };
 		D078ECE91A2A755000F300C3 /* MyBasics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D078ECE81A2A755000F300C3 /* MyBasics.swift */; };
 		D0941C6B1A9547450004411F /* CarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D0941C6A1A9547450004411F /* CarIcon.png */; };
-		D0941C6D1A9679890004411F /* Savior.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0941C6C1A9679890004411F /* Savior.swift */; };
 		D0941C711AA0AD280004411F /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0941C701AA0AD280004411F /* InitialViewController.swift */; };
 		D0B415921A82B4A200B12840 /* BasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B415911A82B4A200B12840 /* BasicViewController.swift */; };
 		D0CDED591A7975AF0061EEE6 /* DefaultSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CDED581A7975AF0061EEE6 /* DefaultSegue.swift */; };
@@ -49,7 +51,6 @@
 		D0F385921BF2517A009983BE /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ED1F161A3B997D00B01B9E /* TransitionManager.swift */; };
 		D0F385931BF2517A009983BE /* TrackListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FFA7CE1A43709400F03AB1 /* TrackListViewController.swift */; };
 		D0F385941BF2517A009983BE /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0941C701AA0AD280004411F /* InitialViewController.swift */; };
-		D0F385951BF2517A009983BE /* Savior.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0941C6C1A9679890004411F /* Savior.swift */; };
 		D0F385961BF2517A009983BE /* MVC_Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03B12F31A32569600BFBB17 /* MVC_Controller.swift */; };
 		D0F385971BF2517A009983BE /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ED1F181A3B999100B01B9E /* PlayerViewController.swift */; };
 		D0F385981BF2517A009983BE /* MyBasics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D078ECE81A2A755000F300C3 /* MyBasics.swift */; };
@@ -299,7 +300,7 @@
 						};
 					};
 					D0F385821BF2517A009983BE = {
-						DevelopmentTeam = YLSW6LR2UZ;
+						DevelopmentTeam = V8CVHAV4LW;
 					};
 				};
 			};
@@ -468,9 +469,10 @@
 				D0ED1F171A3B997D00B01B9E /* TransitionManager.swift in Sources */,
 				D0FFA7CF1A43709400F03AB1 /* TrackListViewController.swift in Sources */,
 				D0941C711AA0AD280004411F /* InitialViewController.swift in Sources */,
-				D0941C6D1A9679890004411F /* Savior.swift in Sources */,
+				1EC3CE5220C0735D0088DD7F /* Savior.swift in Sources */,
 				D03B12F41A32569600BFBB17 /* MVC_Controller.swift in Sources */,
 				D0ED1F191A3B999100B01B9E /* PlayerViewController.swift in Sources */,
+				1EC3CE5320C073750088DD7F /* AppDelegate.swift in Sources */,
 				D078ECE91A2A755000F300C3 /* MyBasics.swift in Sources */,
 				D0FFA7D11A4370E600F03AB1 /* LyricsViewController.swift in Sources */,
 			);
@@ -480,6 +482,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EC3CE5120C0719E0088DD7F /* Savior.swift in Sources */,
 				D0F385851BF2517A009983BE /* UIGestureWithFeatures.swift in Sources */,
 				D0F385861BF2517A009983BE /* DefaultSegue.swift in Sources */,
 				D0F385871BF2517A009983BE /* ModalViewController.swift in Sources */,
@@ -496,7 +499,6 @@
 				D0F385921BF2517A009983BE /* TransitionManager.swift in Sources */,
 				D0F385931BF2517A009983BE /* TrackListViewController.swift in Sources */,
 				D0F385941BF2517A009983BE /* InitialViewController.swift in Sources */,
-				D0F385951BF2517A009983BE /* Savior.swift in Sources */,
 				D0F385961BF2517A009983BE /* MVC_Controller.swift in Sources */,
 				D0F385971BF2517A009983BE /* PlayerViewController.swift in Sources */,
 				D0F385981BF2517A009983BE /* MyBasics.swift in Sources */,
@@ -680,6 +682,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = V8CVHAV4LW;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "CarPlayer copy-Info.plist";
@@ -691,6 +694,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CarPlayer-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -702,6 +706,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = V8CVHAV4LW;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "CarPlayer copy-Info.plist";
@@ -712,6 +717,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CarPlayer-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
