@@ -177,11 +177,17 @@ class MVC_Controller {
 
         // Fill the album dictionary according to what can be found in the music library.
         // Do this asynchronously:
-        let qualityOfServiceClass: Int = Int(QOS_CLASS_BACKGROUND.rawValue)
-        let backgroundQueue = DispatchQueue.global(qualityOfServiceClass, 0)
+        //let qualityOfServiceClass: Int = Int(QOS_CLASS_BACKGROUND.rawValue)
+        //let backgroundQueue = DispatchQueue.global(qualityOfServiceClass, 0)
+        //let backgroundQueue=DispatchQueue.global(qos: .background)
+        DispatchQueue.global(qos: .background).async{
+            self.fillAlbumDictionary()
+        }
+        /*
         dispatch_async(backgroundQueue, {
             self.fillAlbumDictionary()
         })
+        */
     }
 
 

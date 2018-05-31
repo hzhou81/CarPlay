@@ -23,8 +23,8 @@ class DefaultSegue: UIStoryboardSegue {
       //  destinationViewController.view.removeFromSuperview()
 
         // Force presentViewController() into a different runloop.
-        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(0.001 * Double(NSEC_PER_SEC)))
-        dispatch_after(time, dispatch_get_main_queue()) {
+        let time: TimeInterval = 0.001 * Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + time) {
             sourceViewController.present(destinationViewController, animated: true, completion: nil)
         }
     }

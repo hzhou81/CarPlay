@@ -209,7 +209,8 @@ class Locator: CLLocationManager, CLLocationManagerDelegate {
     func getI18NedDecimalString (str: String) -> String {
 
         if _useGermanDecimals {
-            let newString = str.stringByReplacingOccurrencesOfString(".", withString: ",", options: NSString.CompareOptions.LiteralSearch, range: nil)
+            let newString=str.replacingOccurrences(of: ".", with: ",", options: NSString.CompareOptions.literal, range: nil)
+            //let newString = str.stringByReplacingOccurrencesOfString(".", withString: ",", options: NSString.CompareOptions.LiteralSearch, range: nil)
             return newString
         } else {
             return str

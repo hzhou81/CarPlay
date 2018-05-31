@@ -142,9 +142,8 @@ class TracklistViewController: ModalViewController {
         tweakYPosOfNowPlayingItem(totalHeightOfScrollView: curYPos, scrollView: scrollView, yPosOfNowPlayingItem: &yPosOfNowPlayingItem)
 
         // Force jumping to the new y position into a different runloop.
-        let time = DispatchTime.now(dispatch_time_t(DISPATCH_TIME_NOW), Int64(0.5 * Double(NSEC_PER_SEC)))
-        dispatch_after(time, dispatch_get_main_queue()) {
-
+        let time: TimeInterval = 0.5 * Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + time) {
             self.jumpToPosition(yPosOfNowPlayingItem: yPosOfNowPlayingItem)
         }
     }
