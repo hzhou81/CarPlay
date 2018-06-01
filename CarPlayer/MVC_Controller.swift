@@ -265,6 +265,9 @@ class MVC_Controller {
         _initialLoadState = 0.0
 
         // Find out the number of tracks:
+        if(songsQuery.items == nil){
+            return
+        }
         let numOfTracks = songsQuery.items!.count
         var trackCounter: Int = 0
 
@@ -1354,7 +1357,7 @@ class MVC_Controller {
                 curVal = 0.0
             }
         }
-
+        
         UIScreen.main.brightness = curVal
         //DEBUG print("MVC_Controller.setBrightness(): New brightness value: \(UIScreen.mainScreen().brightness)")
 

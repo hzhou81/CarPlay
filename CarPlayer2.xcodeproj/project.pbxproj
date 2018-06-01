@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E65D8F520C14E0A00F86148 /* libPods-CarPlayer2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E65D8F420C14E0A00F86148 /* libPods-CarPlayer2.a */; };
 		1EC3CE5120C0719E0088DD7F /* Savior.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0941C6C1A9679890004411F /* Savior.swift */; };
 		1EC3CE5220C0735D0088DD7F /* Savior.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0941C6C1A9679890004411F /* Savior.swift */; };
 		1EC3CE5320C073750088DD7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D045D8971A1FDC4000944BF1 /* AppDelegate.swift */; };
-		863D1A4DF980757A9253C007 /* libPods-CarPlayer2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F74C5B5E2A4A7E3CE4A64876 /* libPods-CarPlayer2.a */; };
 		D01552FA1A4613AA0047DCC0 /* UIGestureWithFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01552F91A4613AA0047DCC0 /* UIGestureWithFeatures.swift */; };
 		D01552FC1A4877390047DCC0 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01552FB1A4877390047DCC0 /* ModalViewController.swift */; };
 		D0361EA51A49D65D00049DF4 /* Warning.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0361EA41A49D65D00049DF4 /* Warning.swift */; };
@@ -69,9 +69,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		030204E30226103A24025755 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "CarPlayer/Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		30F2F769774C457DBB7E22EB /* Pods-CarPlayer2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarPlayer2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CarPlayer2/Pods-CarPlayer2.debug.xcconfig"; sourceTree = "<group>"; };
-		A38273B4E73D3A8105A81850 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "CarPlayer/Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		1E65D8F420C14E0A00F86148 /* libPods-CarPlayer2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-CarPlayer2.a"; path = "build/Debug-iphoneos/libPods-CarPlayer2.a"; sourceTree = "<group>"; };
+		8F1F9D988C56881688E46CA1 /* Pods-CarPlayer2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarPlayer2.release.xcconfig"; path = "Pods/Target Support Files/Pods-CarPlayer2/Pods-CarPlayer2.release.xcconfig"; sourceTree = "<group>"; };
 		D01552F91A4613AA0047DCC0 /* UIGestureWithFeatures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIGestureWithFeatures.swift; sourceTree = "<group>"; };
 		D01552FB1A4877390047DCC0 /* ModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		D0361EA41A49D65D00049DF4 /* Warning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Warning.swift; sourceTree = "<group>"; };
@@ -108,8 +107,7 @@
 		D0FFA7CC1A43591800F03AB1 /* UIButtonWithFeatures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonWithFeatures.swift; sourceTree = "<group>"; };
 		D0FFA7CE1A43709400F03AB1 /* TrackListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackListViewController.swift; sourceTree = "<group>"; };
 		D0FFA7D01A4370E600F03AB1 /* LyricsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LyricsViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		E4114AA348C80F5524B17D21 /* Pods-CarPlayer2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarPlayer2.release.xcconfig"; path = "Pods/Target Support Files/Pods-CarPlayer2/Pods-CarPlayer2.release.xcconfig"; sourceTree = "<group>"; };
-		F74C5B5E2A4A7E3CE4A64876 /* libPods-CarPlayer2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CarPlayer2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF463756052B6C4D142ED0E4 /* Pods-CarPlayer2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarPlayer2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CarPlayer2/Pods-CarPlayer2.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,22 +122,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				863D1A4DF980757A9253C007 /* libPods-CarPlayer2.a in Frameworks */,
+				1E65D8F520C14E0A00F86148 /* libPods-CarPlayer2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0D2BE7A31A5CC1056AA352E3 /* Pods */ = {
+		47CA31C1C22709956223C2EF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A38273B4E73D3A8105A81850 /* Pods.debug.xcconfig */,
-				030204E30226103A24025755 /* Pods.release.xcconfig */,
-				30F2F769774C457DBB7E22EB /* Pods-CarPlayer2.debug.xcconfig */,
-				E4114AA348C80F5524B17D21 /* Pods-CarPlayer2.release.xcconfig */,
+				DF463756052B6C4D142ED0E4 /* Pods-CarPlayer2.debug.xcconfig */,
+				8F1F9D988C56881688E46CA1 /* Pods-CarPlayer2.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A2880407150143EB4E9FD5AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1E65D8F420C14E0A00F86148 /* libPods-CarPlayer2.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D045D8891A1FDC4000944BF1 = {
@@ -149,9 +153,9 @@
 				D045D8AD1A1FDC4100944BF1 /* CarPlayerTests */,
 				D045D8931A1FDC4000944BF1 /* Products */,
 				D0941C671A9513C00004411F /* CarPlayer-Bridging-Header.h */,
-				0D2BE7A31A5CC1056AA352E3 /* Pods */,
 				D0F385B91BF2517A009983BE /* CarPlayer copy-Info.plist */,
-				F8BDF113A790D679989C8343 /* Frameworks */,
+				47CA31C1C22709956223C2EF /* Pods */,
+				A2880407150143EB4E9FD5AD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -227,14 +231,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		F8BDF113A790D679989C8343 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F74C5B5E2A4A7E3CE4A64876 /* libPods-CarPlayer2.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -242,12 +238,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D045D8B41A1FDC4100944BF1 /* Build configuration list for PBXNativeTarget "CarPlayer" */;
 			buildPhases = (
-				EFCD79C2D4BD72BBE72E5EDB /* Check Pods Manifest.lock */,
 				D045D88E1A1FDC4000944BF1 /* Sources */,
 				D045D88F1A1FDC4000944BF1 /* Frameworks */,
 				D045D8901A1FDC4000944BF1 /* Resources */,
-				FE6953B65F7B46277E5C0F02 /* Embed Pods Frameworks */,
-				3B98887494992AC33913917C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -262,12 +255,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0F385B51BF2517A009983BE /* Build configuration list for PBXNativeTarget "CarPlayer2" */;
 			buildPhases = (
-				D0F385831BF2517A009983BE /* Check Pods Manifest.lock */,
+				8960A26FF7549E8E0C7FF503 /* [CP] Check Pods Manifest.lock */,
 				D0F385841BF2517A009983BE /* Sources */,
 				D0F3859A1BF2517A009983BE /* Frameworks */,
 				D0F385A91BF2517A009983BE /* Resources */,
-				D0F385B31BF2517A009983BE /* Embed Pods Frameworks */,
-				D0F385B41BF2517A009983BE /* Copy Pods Resources */,
+				CBD673DAB829A3BB15B29B69 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -357,94 +349,40 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3B98887494992AC33913917C /* Copy Pods Resources */ = {
+		8960A26FF7549E8E0C7FF503 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CarPlayer2-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/CarPlayer/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D0F385831BF2517A009983BE /* Check Pods Manifest.lock */ = {
+		CBD673DAB829A3BB15B29B69 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CarPlayer2/Pods-CarPlayer2-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle",
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		D0F385B31BF2517A009983BE /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CarPlayer2/Pods-CarPlayer2-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D0F385B41BF2517A009983BE /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CarPlayer2/Pods-CarPlayer2-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EFCD79C2D4BD72BBE72E5EDB /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		FE6953B65F7B46277E5C0F02 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/CarPlayer/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -530,7 +468,6 @@
 /* Begin XCBuildConfiguration section */
 		D045D8B21A1FDC4100944BF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 30F2F769774C457DBB7E22EB /* Pods-CarPlayer2.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -583,7 +520,6 @@
 		};
 		D045D8B31A1FDC4100944BF1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4114AA348C80F5524B17D21 /* Pods-CarPlayer2.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -629,7 +565,6 @@
 		};
 		D045D8B51A1FDC4100944BF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 30F2F769774C457DBB7E22EB /* Pods-CarPlayer2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -653,7 +588,6 @@
 		};
 		D045D8B61A1FDC4100944BF1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4114AA348C80F5524B17D21 /* Pods-CarPlayer2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -676,7 +610,7 @@
 		};
 		D0F385B61BF2517A009983BE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 30F2F769774C457DBB7E22EB /* Pods-CarPlayer2.debug.xcconfig */;
+			baseConfigurationReference = DF463756052B6C4D142ED0E4 /* Pods-CarPlayer2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -687,6 +621,10 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "CarPlayer copy-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				OTHER_LDFLAGS = "${inherited}";
 				PODS_ROOT = "${inherited}";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tempest-rock-studios.CarPlayer2";
@@ -700,7 +638,7 @@
 		};
 		D0F385B71BF2517A009983BE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4114AA348C80F5524B17D21 /* Pods-CarPlayer2.release.xcconfig */;
+			baseConfigurationReference = 8F1F9D988C56881688E46CA1 /* Pods-CarPlayer2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -711,6 +649,10 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "CarPlayer copy-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				OTHER_LDFLAGS = "${inherited}";
 				PODS_ROOT = "${inherited}";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tempest-rock-studios.CarPlayer2";
